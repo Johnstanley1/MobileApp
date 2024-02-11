@@ -1,0 +1,185 @@
+<!--
+Programming Mobile Apps
+Name: Johnstanley Ajagu
+Student ID: 8864315
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>JA Feedback A1</title>
+        <!--jquery-->
+        <script src="js/lib/jquery-2.1.4.js"></script>
+        <!--jquery mobile-->
+        <script src="js/lib/jquery.mobile-1.4.5.js"></script>
+        <!--jquery mobile style-->
+        <link rel="stylesheet" href="css/lib/jquery.mobile-1.4.5.css">
+        <!--our styles-->
+        <link rel="stylesheet" href="css/myStyles.css">
+        <!--our libraries-->
+        <script src="js/global.js"></script>
+
+    </head>
+    <body>
+        <div data-role="page" id="JAHomePage">
+            <header data-role="header" data-theme="a" data-position="fixed">
+                <h1>JA Feedback A1</h1>
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li><a href="#JAHomePage" data-icon="home" class="ui-btn-active ui-state-persist">Home</a></li>
+                        <li><a href="#JAAddFeedbackPage" data-icon="plus">Add</a></li>
+                        <li><a href="#JAViewFeedbackPage" data-icon="grid">Reviews</a></li>
+                        <li><a href="#JASettingsPage" data-icon="gear">Settings</a></li>
+                    </ul>
+                </div>
+            </header>
+            <section data-role="content">
+                <h1>Johnstanley Ajagu's feedback A1 App</h1>
+                <p>Welcome to Johnstanley Ajagu's feedback A1 app. <br>
+                    A prototype designed for mobile programming class.
+                    This is the first iteration of the app to keep track
+                    of different places a user visited along with their reviews.
+                </p>
+                <img src="img/JA-image.png" alt="feedback icon">
+                <p>Please feel free to contact me if you have any suggestions!</p>
+
+                <a href="#" data-role="button" data-icon="plus">Call: 519.748.5220</a>
+                <a href="#" data-role="button" data-icon="plus">jajagu4315@conestogac.on.ca</a>
+                <label for="Website" id="Website">Website:</label>
+                <a href="#" data-role="button" data-icon="plus">Conestoga College</a>
+            </section>
+            <footer data-role="footer" data-theme="a" data-position="fixed">
+                <h1>&copy; Johnstanley Ajagu</h1>
+            </footer>
+        </div>
+
+        <div data-role="page" id="JAAddFeedbackPage">
+            <header data-role="header" data-theme="a" data-position="fixed">
+                <h1>Add a Feedback</h1>
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li><a href="#JAHomePage" data-icon="home">Home</a></li>
+                        <li><a href="#JAAddFeedbackPage" class="ui-btn-active ui-state-persist" data-icon="plus">Add</a></li>
+                        <li><a href="#JAViewFeedbackPage" data-icon="grid">Reviews</a></li>
+                        <li><a href="#JASettingsPage" data-icon="gear">Settings</a></li>
+                    </ul>
+                </div>
+            </header>
+            <section data-role="content">
+                <form action="" id="frmAdd" name="frmAdd">
+                    <label for="BusinessName">Business Name:</label>
+                    <input type="text" id="BusinessName" name="BusinessName">
+                    <label for="ReviewerEmail">Reviewer Email:</label>
+                    <input type="text" id="ReviewerEmail" name="ReviewerEmail">
+                    <label for="ReviewerComments">Reviewer Comments:</label>
+                    <textarea name="ReviewerComments" id="ReviewerComments" cols="30" rows="10"></textarea>
+                    <label for="OverallRatings">Overall Ratings(1-100)</label>
+                    <input type="number" id="OverallRatings" name="OverallRatings">
+
+                    <button type="button" data-inline="true" class="ui-btn-active" id="btnSave" name="btnSave">Save</button>
+                </form>
+            </section>
+            <footer data-role="footer" data-theme="a" data-position="fixed">
+                <h1>&copy; Johnstanley Ajagu</h1>
+            </footer>
+        </div>
+
+        <div data-role="page" id="JAViewFeedbackPage">
+            <header data-role="header" data-theme="a" data-position="fixed">
+                <h1>List of Reviews</h1>
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li><a href="#JAHomePage" data-icon="home">Home</a></li>
+                        <li><a href="#JAAddFeedbackPage" data-icon="plus">Add</a></li>
+                        <li><a href="#JAViewFeedbackPage" class="ui-btn-active ui-state-persist" data-icon="grid">Reviews</a></li>
+                        <li><a href="#JASettingsPage" data-icon="gear">Settings</a></li>
+                    </ul>
+                </div>
+            </header>
+            <section data-role="content">
+                <ul data-role="listview" data-inset="true" data-icon="">
+                    <li id="1stViewFeedback">
+                        <a href="#JAModifyFeedbackPage">
+                            <h2>Course Name: Microsoft web technologies</h2>
+                            <p>Reviewer email: johnstanley.ajagu@gmail.com</p>
+                            <p>Comments: Great Course</p>
+                            <p>Overall rating: 90%</p>
+                        </a>
+                    </li>
+                    <li id="2ndViewFeedback">
+                        <a href="#JAModifyFeedbackPage">
+                            <h2>Course Name: Game programming</h2>
+                            <p>Reviewer email: John.stanley@gmail.com</p>
+                            <p>Comments: Great skills to learn</p>
+                            <p>Overall rating: 95%</p>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+            <footer data-role="footer" data-theme="a" data-position="fixed">
+                <h1>&copy; Johnstanley Ajagu</h1>
+            </footer>
+        </div>
+
+        <div data-role="page" id="JAModifyFeedbackPage">
+            <header data-role="header" data-theme="a" data-position="fixed">
+                <h1>Modify Feedback</h1>
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li><a href="#JAHomePage" data-icon="home">Home</a></li>
+                        <li><a href="#JAAddFeedbackPage" data-icon="plus">Add</a></li>
+                        <li><a href="#JAViewFeedbackPage" class="ui-btn-active ui-state-persist" data-icon="grid">Reviews</a></li>
+                        <li><a href="#JASettingsPage"  data-icon="gear">Settings</a></li>
+                    </ul>
+                </div>
+            </header>
+            <section data-role="content">
+                <form action="" id="frmModify" name="frmModify">
+                    <label for="ModifyBusinessName">Business Name:</label>
+                    <input type="text" name="ModifyBusinessName" id="ModifyBusinessName" value="Microsoft web technologies">
+                    <label for="ModifyReviewerEmail">Reviewer Email:</label>
+                    <input type="text" name="ModifyReviewerEmail" id="ModifyReviewerEmail" value="johnstanley.ajagu@gmail.com">
+                    <label for="ModifyReviewerComments">Reviewer Comments:</label>
+                    <textarea name="ModifyReviewerComments" id="ModifyReviewerComments" cols="30" rows="10">Great Course</textarea>
+                    <label for="ModifyOverallRatings">Overall Ratings(1-100)</label>
+                    <input type="number" id="ModifyOverallRatings" name="ModifyOverallRatings" value="90">
+
+                    <div class="container" data-role="controlgroup" data-type="horizontal">
+                        <button type="button" data-inline="true" id="btnCancel" name="btnCancel" data-iconpos="left">Cancel</button>
+                        <button type="button" data-inline="true" data-theme="b" id="btnDelete" name="btnDelete" data-iconpos="left">Delete</button>
+                        <button type="button" data-inline="true" class="ui-btn-active" id="btnUpdate" name="btnUpdate" data-iconpos="left">Update</button>
+                    </div>
+                </form>
+            </section>
+            <footer data-role="footer" data-theme="a" data-position="fixed">
+                <h1>&copy; Johnstanley Ajagu</h1>
+            </footer>
+        </div>
+
+        <div data-role="page" id="JASettingsPage">
+            <header data-role="header" data-theme="a" data-position="fixed">
+                <h1>Settings</h1>
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li><a href="#JAHomePage" data-icon="home">Home</a></li>
+                        <li><a href="#JAAddFeedbackPage" data-icon="plus">Add</a></li>
+                        <li><a href="#JAViewFeedbackPage" data-icon="grid">Reviews</a></li>
+                        <li><a href="#JASettingsPage" class="ui-btn-active ui-state-persist" data-icon="gear">Settings</a></li>
+                    </ul>
+                </div>
+            </header>
+            <section data-role="content">
+                <form action="" id="frmDefault" name="frmDefault">
+                    <label for="DefaultEmail">Default Reviewer Email:</label>
+                    <input type="text" name="DefaultEmail" id="DefaultEmail">
+
+                    <button type="button" class="ui-btn-active" id="btnDefault" name="btnDefault">Save Defaults</button>
+                    <button type="button" data-theme="b" id="btnClearReviews" name="btnClearReviews">Clear all Reviews</button>
+                </form>
+            </section>
+            <footer data-role="footer" data-theme="a" data-position="fixed">
+                <h1>&copy; Johnstanley Ajagu</h1>
+            </footer>
+        </div>
+    </body>
+</html>

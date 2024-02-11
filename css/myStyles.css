@@ -1,0 +1,16 @@
+/*
+Programming Mobile Apps
+Name: Johnstanley Ajagu
+Student ID: 8864315
+*/
+
+img{
+    width: 350px;
+    display: block;
+    margin: auto;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}
