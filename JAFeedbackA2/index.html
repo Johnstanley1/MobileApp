@@ -1,0 +1,227 @@
+<!--
+Programming Mobile Apps
+Name: Johnstanley Ajagu
+Student ID: 8864315
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <title>JA Feedback A2</title>
+        <!--jquery-->
+        <script src="js/lib/jquery-2.1.4.js"></script>
+        <!--jquery mobile-->
+        <script src="js/lib/jquery.mobile-1.4.5.js"></script>
+        <!--jquery validate lib-->
+        <script src="js/lib/jquery.validate.js"></script>
+        <!--jquery mobile style-->
+        <link rel="stylesheet" href="css/lib/jquery.mobile-1.4.5.css">
+        <!--our libraries-->
+        <script src="js/JAglobal.js"></script>
+        <script src="js/JADAL.js"></script>
+        <script src="js/JAdatabase.js"></script>
+        <script src="js/JAfacade.js"></script>
+        <script src="js/JAmodels.js"></script>
+        <script src="js/JAutil.js"></script>
+        <!--our styles-->
+        <link rel="stylesheet" href="css/JAmystyle.css">
+
+    </head>
+    <body>
+        <div data-role="page" id="JAHomePage">
+            <header data-role="header" data-theme="a" data-position="fixed">
+                <h1>JA Feedback A2</h1>
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li><a href="#JAHomePage" data-icon="home" class="ui-btn-active ui-state-persist">Home</a></li>
+                        <li><a href="#JAAddFeedbackPage" data-icon="plus">Add</a></li>
+                        <li><a href="#JAViewFeedbackPage" data-icon="grid">Reviews</a></li>
+                        <li><a href="#JASettingsPage" data-icon="gear">Settings</a></li>
+                    </ul>
+                </div>
+            </header>
+            <section data-role="content">
+                <h1>Johnstanley Ajagu's feedback A2 App</h1>
+                <p>Welcome to Johnstanley Ajagu's feedback A2 app. <br>
+                    A prototype designed for mobile programming class.
+                    This is the first iteration of the app to keep track
+                    of different places a user visited along with their reviews.
+                </p>
+                <img src="img/JA-image.png" alt="feedback icon">
+                <p>Please feel free to contact me if you have any suggestions!</p>
+
+                <a href="#" data-role="button" data-icon="plus">Call: 519.748.5220</a>
+                <a href="#" data-role="button" data-icon="plus">jajagu4315@conestogac.on.ca</a>
+                <label for="Website" id="Website">Website:</label>
+                <a href="#" data-role="button" data-icon="plus">Conestoga College</a>
+            </section>
+            <footer data-role="footer" data-theme="a" data-position="fixed">
+                <h1>&copy; 2024 Johnstanley Ajagu</h1>
+            </footer>
+        </div>
+
+        <div data-role="page" id="JAAddFeedbackPage">
+            <header data-role="header" data-theme="a" data-position="fixed">
+                <h1>Add a Feedback</h1>
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li><a href="#JAHomePage" data-icon="home">Home</a></li>
+                        <li><a href="#JAAddFeedbackPage" class="ui-btn-active ui-state-persist" data-icon="plus">Add</a></li>
+                        <li><a href="#JAViewFeedbackPage" data-icon="grid">Reviews</a></li>
+                        <li><a href="#JASettingsPage" data-icon="gear">Settings</a></li>
+                    </ul>
+                </div>
+            </header>
+            <section data-role="content">
+                <form action="" id="frmAdd" name="frmAdd">
+                    <label for="BusinessName">Business Name:</label>
+                    <input type="text" id="BusinessName" name="BusinessName">
+                    <label for="ethnicity">Type:</label>
+                    <select name="ethnicity" id="ethnicity" data-type-native="false">
+                        <option value="Other">Other</option>
+                        <option value="Asian">Asian</option>
+                        <option value="Canadian">Canadian</option>
+                    </select>
+                    <label for="ReviewerEmail">Reviewer Email:</label>
+                    <input type="text" id="ReviewerEmail" name="ReviewerEmail">
+                    <label for="ReviewerComments">Reviewer Comments:</label>
+                    <textarea name="ReviewerComments" id="ReviewerComments" cols="30" rows="10"></textarea>
+                    <label for="ReviewerDate">Reviewer Date:</label>
+                    <input type="date" id="ReviewerDate" name="ReviewerDate">
+                    <label for="AddRatings">Do you want to add your ratings?</label>
+                    <input type="checkbox" id="AddRatings" name="AddRatings">
+                    <div id="ratings" style="display: none">
+                        <label for="FoodQuality">Food Quality (0-5):</label>
+                        <input type="number" id="FoodQuality" name="FoodQuality">
+                        <label for="Service">Service (0-5):</label>
+                        <input type="number" id="Service" name="Service">
+                        <label for="txtValue">Value (0-5):</label>
+                        <input type="number" id="txtValue" name="txtValue">
+                        <label for="OverallRatings">Overall Rating (Calculated):</label>
+                        <input type="text" id="OverallRatings" name="OverallRatings" readonly>
+                    </div>
+
+                    <button type="button" data-inline="true" class="ui-btn-active" id="btnSave" name="btnSave">Save</button>
+                </form>
+            </section>
+            <footer data-role="footer" data-theme="a" data-position="fixed">
+                <h1>&copy; 2024 Johnstanley Ajagu</h1>
+            </footer>
+        </div>
+
+        <div data-role="page" id="JAViewFeedbackPage">
+            <header data-role="header" data-theme="a" data-position="fixed">
+                <h1>List of Reviews</h1>
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li><a href="#JAHomePage" data-icon="home">Home</a></li>
+                        <li><a href="#JAAddFeedbackPage" data-icon="plus">Add</a></li>
+                        <li><a href="#JAViewFeedbackPage" class="ui-btn-active ui-state-persist" data-icon="grid">Reviews</a></li>
+                        <li><a href="#JASettingsPage" data-icon="gear">Settings</a></li>
+                    </ul>
+                </div>
+            </header>
+            <section data-role="content">
+                <ul data-role="listview" id="listViewFeedback" data-inset="true" data-icon="">
+                    <li>
+                        <a href="#JAModifyFeedbackPage">
+                            <h2>Course Name: Microsoft web technologies</h2>
+                            <p>Reviewer email: johnstanley.ajagu@gmail.com</p>
+                            <p>Comments: Great Course</p>
+                            <p>Overall rating: 90%</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#JAModifyFeedbackPage">
+                            <h2>Course Name: Game programming</h2>
+                            <p>Reviewer email: John.stanley@gmail.com</p>
+                            <p>Comments: Great skills to learn</p>
+                            <p>Overall rating: 95%</p>
+                        </a>
+                    </li>
+                </ul>
+            </section>
+            <footer data-role="footer" data-theme="a" data-position="fixed">
+                <h1>&copy; 2024 Johnstanley Ajagu</h1>
+            </footer>
+        </div>
+
+        <div data-role="page" id="JAModifyFeedbackPage">
+            <header data-role="header" data-theme="a" data-position="fixed">
+                <h1>Modify Feedback</h1>
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li><a href="#JAHomePage" data-icon="home">Home</a></li>
+                        <li><a href="#JAAddFeedbackPage" data-icon="plus">Add</a></li>
+                        <li><a href="#JAViewFeedbackPage" class="ui-btn-active ui-state-persist" data-icon="grid">Reviews</a></li>
+                        <li><a href="#JASettingsPage"  data-icon="gear">Settings</a></li>
+                    </ul>
+                </div>
+            </header>
+            <section data-role="content">
+                <form action="" id="frmModify" name="frmModify">
+                    <label for="ModifyBusinessName">Business Name:</label>
+                    <input type="text" name="ModifyBusinessName" id="ModifyBusinessName" value="Microsoft web technologies">
+                    <label for="ModifyEthnicity">Type:</label>
+                    <select name="ModifyEthnicity" id="ModifyEthnicity" data-type-native="false">
+                        <option value="Other">Other</option>
+                        <option value="Asian">Asian</option>
+                        <option value="Canadian">Canadian</option>
+                    </select>
+                    <label for="ModifyReviewerEmail">Reviewer Email:</label>
+                    <input type="text" name="ModifyReviewerEmail" id="ModifyReviewerEmail" value="johnstanley.ajagu@gmail.com">
+                    <label for="ModifyReviewerComments">Reviewer Comments:</label>
+                    <textarea name="ModifyReviewerComments" id="ModifyReviewerComments" cols="30" rows="10">Great Course</textarea>
+                    <label for="ModifyReviewerDate">Reviewer Date:</label>
+                    <input type="date" id="ModifyReviewerDate" name="ModifyReviewerDate">
+                    <label for="ModifyAddRatings">Do you want to add your ratings?</label>
+                    <input type="checkbox" id="ModifyAddRatings" name="ModifyAddRatings">
+                    <div id="ModifyRating" style="display: none">
+                        <label for="ModifyFoodQuality">Food Quality (0-5):</label>
+                        <input type="number" id="ModifyFoodQuality" name="ModifyFoodQuality">
+                        <label for="ModifyService">Service (0-5):</label>
+                        <input type="number" id="ModifyService" name="ModifyService">
+                        <label for="ModifyTxtValue">Value (0-5):</label>
+                        <input type="number" id="ModifyTxtValue" name="ModifyTxtValue">
+                        <label for="ModifyOverallRatings">Overall Rating (Calculated):</label>
+                        <input type="text" id="ModifyOverallRatings" name="ModifyOverallRatings" readonly>
+                    </div>
+                    <div data-role="controlgroup" data-type="horizontal">
+                        <button type="button" data-inline="true" id="btnCancel" name="btnCancel" data-iconpos="left">Cancel</button>
+                        <button type="button" data-inline="true" data-theme="b" id="btnDelete" name="btnDelete" data-iconpos="left">Delete</button>
+                        <button type="button" data-inline="true" class="ui-btn-active" id="btnUpdate" name="btnUpdate" data-iconpos="left">Update</button>
+                    </div>
+                </form>
+            </section>
+            <footer data-role="footer" data-theme="a" data-position="fixed">
+                <h1>&copy; 2024 Johnstanley Ajagu</h1>
+            </footer>
+        </div>
+
+        <div data-role="page" id="JASettingsPage">
+            <header data-role="header" data-theme="a" data-position="fixed">
+                <h1>Settings</h1>
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li><a href="#JAHomePage" data-icon="home">Home</a></li>
+                        <li><a href="#JAAddFeedbackPage" data-icon="plus">Add</a></li>
+                        <li><a href="#JAViewFeedbackPage" data-icon="grid">Reviews</a></li>
+                        <li><a href="#JASettingsPage" class="ui-btn-active ui-state-persist" data-icon="gear">Settings</a></li>
+                    </ul>
+                </div>
+            </header>
+            <section data-role="content">
+                <form action="" id="frmDefault" name="frmDefault">
+                    <label for="DefaultEmail">Default Reviewer Email:</label>
+                    <input type="text" name="DefaultEmail" id="DefaultEmail" value="jajagu4315@conestogac.on.ca">
+
+                    <button type="button" class="ui-btn-active" id="btnDefault" name="btnDefault">Save Defaults</button>
+                    <button type="button" data-theme="b" id="btnClearReviews" name="btnClearReviews">Clear all Reviews</button>
+                </form>
+            </section>
+            <footer data-role="footer" data-theme="a" data-position="fixed">
+                <h1>&copy; 2024 Johnstanley Ajagu</h1>
+            </footer>
+        </div>
+    </body>
+</html>
