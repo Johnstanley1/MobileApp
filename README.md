@@ -1,5 +1,7 @@
 The first iteration is the creation of the static HTML pages for the mobile app.
 
+The second iteration is the implementation of javascript validations and saving the reviewer's email to local storage
+
 The Home page: 
 This is the home page with four navigation pages at the header/top of the page
 The page also displays the feedback image in the body
@@ -10,7 +12,7 @@ The footer displays information regarding the developer and year of development
 
 The Add page:
 This page is a simple form for adding reviewer's feedback information to the database
-The displays the header tabs and footer just as the home page
+It displays the header tabs and footer just as the home page
 There's a save button to trigger the save function to the database
 
 ![Add](https://github.com/Johnstanley1/MobileWebApp/assets/124546871/67d79d02-0ef5-4ba4-94b9-9e2af521a182)
