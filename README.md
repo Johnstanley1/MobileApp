@@ -2,6 +2,8 @@ The first iteration is the creation of the static HTML pages for the mobile app.
 
 The second iteration is the implementation of javascript validations and saving the reviewer's email to local storage
 
+The third iteration is the creation of two stores, namely reviews and types, for storing reviews in the IndexedDB. The reviews store performs CRUD functionalities, while the types store is a look-up store.
+
 The Home page: 
 This is the home page with four navigation pages at the header/top of the page
 The page also displays the feedback image in the body
