@@ -14,7 +14,6 @@ function AddRating_check()
         $("#FoodQuality").val(0)
         $("#Service").val(0)
         $("#txtValue").val(0)
-        $("#OverallRatings").val()
     }
     else{
         $("#ratings").hide()
@@ -39,17 +38,49 @@ function ModifyAddRatings_check()
 
 function btnSave_click()
 {
-    addReviews()
+    addFeedback()
 }
 
 function btnUpdate_click()
 {
-    modifyReview()
+    updateFeedback()
 }
 
 function btnDefault_click()
 {
     initStorage()
+}
+
+function JAAddFeedbackPage_Click()
+{
+    const defaultEmail = localStorage.getItem("DefaultEmail")
+    $("#ReviewerEmail").val(defaultEmail)
+    showAllTypes()
+    $("#JAAddFeedbackPage").on("pageshow", function() {
+        location.reload()
+    })
+}
+
+function JAViewFeedbackPage_Click()
+{
+    getReviews()
+}
+
+function JAModifyFeedbackPage_Click()
+{
+    showCurrentReview()
+}
+function btnDelete_click()
+{
+    deleteFeedback()
+}
+function btnCancel_click()
+{
+    cancel()
+}
+function btnClearReviews_click()
+{
+    clearReviews()
 }
 
 function init()
@@ -61,9 +92,21 @@ function init()
     $("#btnSave").on("click", btnSave_click)
     $("#btnUpdate").on("click", btnUpdate_click)
     $("#btnDefault").on("click", btnDefault_click)
+    $("#btnDelete").on("click", btnDelete_click)
+    $("#btnCancel").on("click", btnCancel_click)
+    $("#btnClearReviews").on("click", btnClearReviews_click)
 
+    $("#JAAddFeedbackPage").on("pageshow", JAAddFeedbackPage_Click)
+    $("#JAViewFeedbackPage").on("pageshow", JAViewFeedbackPage_Click)
+    $("#JAModifyFeedbackPage").on("pageshow", JAModifyFeedbackPage_Click)
+
+}
+
+function initDB(){
+    initDatabase()
 }
 
 $(document).ready(function () {
     init()
+    initDB()
 })

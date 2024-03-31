@@ -7,7 +7,7 @@ Student ID: 8864315
 <html lang="en">
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-        <title>JA Feedback A2</title>
+        <title>JA Feedback A3</title>
         <!--jquery-->
         <script src="js/lib/jquery-2.1.4.js"></script>
         <!--jquery mobile-->
@@ -25,12 +25,12 @@ Student ID: 8864315
         <script src="js/JAutil.js"></script>
         <!--our styles-->
         <link rel="stylesheet" href="css/JAmystyle.css">
-
+        <link rel="icon" href="img/JA-image.png">
     </head>
     <body>
         <div data-role="page" id="JAHomePage">
             <header data-role="header" data-theme="a" data-position="fixed">
-                <h1>JA Feedback A2</h1>
+                <h1>JA Feedback A3</h1>
                 <div data-role="navbar" data-iconpos="top">
                     <ul>
                         <li><a href="#JAHomePage" data-icon="home" class="ui-btn-active ui-state-persist">Home</a></li>
@@ -41,10 +41,10 @@ Student ID: 8864315
                 </div>
             </header>
             <section data-role="content">
-                <h1>Johnstanley Ajagu's feedback A2 App</h1>
-                <p>Welcome to Johnstanley Ajagu's feedback A2 app. <br>
+                <h1>Johnstanley Ajagu's feedback A3 App</h1>
+                <p>Welcome to Johnstanley Ajagu's feedback A3 app. <br>
                     A prototype designed for mobile programming class.
-                    This is the first iteration of the app to keep track
+                    This is the third iteration of the app to keep track
                     of different places a user visited along with their reviews.
                 </p>
                 <img src="img/JA-image.png" alt="feedback icon">
@@ -122,10 +122,10 @@ Student ID: 8864315
                 </div>
             </header>
             <section data-role="content">
-                <ul data-role="listview" id="listViewFeedback" data-inset="true" data-icon="">
+                <ul data-role="listview" id="listViewFeedback" data-inset="true">
                     <li>
                         <a href="#JAModifyFeedbackPage">
-                            <h2>Course Name: Microsoft web technologies</h2>
+                            <h2>Course Name: M-Web technologies</h2>
                             <p>Reviewer email: johnstanley.ajagu@gmail.com</p>
                             <p>Comments: Great Course</p>
                             <p>Overall rating: 90%</p>
@@ -161,7 +161,7 @@ Student ID: 8864315
             <section data-role="content">
                 <form action="" id="frmModify" name="frmModify">
                     <label for="ModifyBusinessName">Business Name:</label>
-                    <input type="text" name="ModifyBusinessName" id="ModifyBusinessName" value="Microsoft web technologies">
+                    <input type="text" name="ModifyBusinessName" id="ModifyBusinessName">
                     <label for="ModifyEthnicity">Type:</label>
                     <select name="ModifyEthnicity" id="ModifyEthnicity" data-type-native="false">
                         <option value="Other">Other</option>
@@ -169,9 +169,9 @@ Student ID: 8864315
                         <option value="Canadian">Canadian</option>
                     </select>
                     <label for="ModifyReviewerEmail">Reviewer Email:</label>
-                    <input type="text" name="ModifyReviewerEmail" id="ModifyReviewerEmail" value="johnstanley.ajagu@gmail.com">
+                    <input type="text" name="ModifyReviewerEmail" id="ModifyReviewerEmail">
                     <label for="ModifyReviewerComments">Reviewer Comments:</label>
-                    <textarea name="ModifyReviewerComments" id="ModifyReviewerComments" cols="30" rows="10">Great Course</textarea>
+                    <textarea name="ModifyReviewerComments" id="ModifyReviewerComments" cols="30" rows="10"></textarea>
                     <label for="ModifyReviewerDate">Reviewer Date:</label>
                     <input type="date" id="ModifyReviewerDate" name="ModifyReviewerDate">
                     <label for="ModifyAddRatings">Do you want to add your ratings?</label>

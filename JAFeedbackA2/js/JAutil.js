@@ -16,7 +16,6 @@ function getCurrentRating(){
     }
     else{
         $("#OverallRatings").val(( calRating.toFixed(0) + "%"))
-
     }
 }
 
@@ -153,8 +152,7 @@ function doValidate_frmModify(){
 jQuery.validator.addMethod(
     "emailCheck",
     function (value, element){
-        const regexp =
-            /^[\w-]+(\.[\w-]+)*@(gmail\.(?:com|org|net)|yahoo\.(?:com|org|net)|outlook\.(?:com|org|net)|hotmail\.(?:com|org|net)|aol\.(?:com|org|net)|conestogac\.on\.ca)$/
+        const regexp = /^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$/
         return this.optional(element) || regexp.test(value)
     },
     "Email must be valid in the format abc@domain.com"

@@ -6,13 +6,24 @@
  */
 
 class Reviewer{
-    constructor(name, email, date, quality, service, value)
+    constructor(businessName, reviewerEmail, reviewerComments,
+                reviewDate, hasRating, rating1, rating2, rating3, typeId)
+    {
+        this.businessName = businessName
+        this.reviewerEmail = reviewerEmail
+        this.reviewerComments = reviewerComments
+        this.reviewerDate = reviewDate
+        this.hasRating = hasRating
+        this.rating1 = rating1
+        this.rating2 = rating2
+        this.rating3 = rating3
+        this.typeId = typeId
+    }
+}
+
+class Type{
+    constructor(name)
     {
         this.name = name
-        this.email = email
-        this.date = date
-        this.quality = quality
-        this.service = service
-        this.value = value
     }
 }
